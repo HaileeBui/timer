@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timer/page/home_page.dart';
 
-void main() {
+void main() async {
+  //var prefs = await SharedPreferences.getInstance();
+  // runApp(MyApp(prefs: prefs));
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  // SharedPreferences prefs;
+  // MyApp({required this.prefs});
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -24,9 +29,11 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.amber,
       ),
-      home: const Home(),
+      home: const Home(
+          //prefs: prefs,
+          ),
     );
   }
 }

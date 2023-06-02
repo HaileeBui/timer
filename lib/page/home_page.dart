@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timer/page/countdown.dart';
 import 'package:timer/page/stop_watch.dart';
-import 'package:timer/page/workout.dart';
+import 'package:timer/page/setup_screen.dart';
 
 class Home extends StatefulWidget {
+  // SharedPreferences prefs;
+  // Home({required this.prefs});
   const Home({super.key});
-
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   late TabController controller;
-
   @override
   void initState() {
     // TODO: implement initState
@@ -39,14 +40,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             Tab(text: 'Timer'),
             Tab(text: 'Countdown'),
             Tab(
-              text: 'Sound',
+              text: 'HIIT',
             )
           ]),
         ),
         body: TabBarView(controller: controller, children: [
           StopWatchPage(),
           Countdown(),
-          Workout(),
+          SetupScreen(),
         ]),
       );
 
